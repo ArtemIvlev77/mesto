@@ -1,0 +1,11 @@
+.element__title {
+  width: 90%;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 0.9;
+  color: #000000;
+  z-index: 1;
+  padding-left: 21px;
+  display: flex;
+  justify-content: space-between;
+}
