@@ -16,11 +16,13 @@
 @import url(../blocks/profile/__button/profile__button.css);
 /*            --elements--          */
 @import url(../blocks/elements/elements.css);
-/*            --elements--          */
+/*            --element--          */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__discription/element__discription.css);
-
-
-
+@import url(../blocks/element/__image/element__image.css);
+@import url(../blocks/element/__container/element__container.css);
+/*            --footer--          */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
 
 
