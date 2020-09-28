@@ -3,4 +3,5 @@
   border-radius: 50%;
   object-fit: cover;  
   box-sizing: border-box;
+  justify-self: center;
 }

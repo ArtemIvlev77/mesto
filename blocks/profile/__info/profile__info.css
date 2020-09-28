@@ -1,4 +1,4 @@
 .profile__info {
   display: flex;
- 
+  flex-direction: column;
 }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -10,25 +11,27 @@
 
 <body class="page">
   <div class="page__container">
-    <header class="header section page__header">
-        <img src="./image/logo.jpg" alt="логотип: место россия" class="header__logo">
+    <header class="header section">
+      <img src="./image/logo.jpg" alt="логотип: место россия" class="header__logo">
     </header>
     <main class="content page__content">
       <section class="profile section">
         <img src="./image/jak-iv-kusto.jpg" alt="Жак Ив Кусто" class="profile__avatar">
         <div class="profile__info">
-          <p class="profile__info_name">Жак Ив Кусто </p>
+          <p class="profile__info_name">Жак Ив Кусто
+            <button class="profile__edit-btn"> <img src="./image/pencil.svg" alt="кнопка редактировать" class="profile__btn_img"></button> </p>
           <p class="profile__info_discription">Исследователь океана </p>
         </div>
-        <button class="profile__btn"><img src="./image/pencil.jpg" alt="кнопка редактировать"
-            class="profile__btn_img"></button>
+          
+        <button class="profile__add-btn"><img src="./image/add-btn.svg" alt="кнопка добавить"></button>
       </section>
       <section class="elements section">
         <ul class="element__container">
           <li class="element"><img src="./image/karachaevsk.jpg" alt="карачевск" class="element__image">
             <p class="element__title">Карачаевск <img src="./image/heart.jpg" alt="лайк" class="element__like"></p>
           </li>
-          <li class="element"><img src="./image/kirill-pershin-1404681-unsplashelbrus.jpg" alt="Гора Эльбрус" class="element__image">
+          <li class="element"><img src="./image/kirill-pershin-1404681-unsplashelbrus.jpg" alt="Гора Эльбрус"
+              class="element__image">
             <p class="element__title">Гора Эльбрус <img src="./image/heart.jpg" alt="лайк" class="element__like"></p>
           </li>
           <li class="element"><img src="./image/dombai.png" alt="Домбай" class="element__image">
@@ -37,19 +40,19 @@
           <li class="element"><img src="./image/karachaevsk.jpg" alt="карачевск" class="element__image">
             <p class="element__title">Карачаевск <img src="./image/heart.jpg" alt="лайк" class="element__like"></p>
           </li>
-          <li class="element"><img src="./image/kirill-pershin-1404681-unsplashelbrus.jpg" alt="Гора Эльбрус" class="element__image">
+          <li class="element"><img src="./image/kirill-pershin-1404681-unsplashelbrus.jpg" alt="Гора Эльбрус"
+              class="element__image">
             <p class="element__title">Гора Эльбрус <img src="./image/heart.jpg" alt="лайк" class="element__like"></p>
           </li>
           <li class="element"><img src="./image/dombai.png" alt="Домбай" class="element__image">
-            <p class="element__title">Домбай  <img src="./image/heart.jpg" alt="лайк" class="element__like"></p>
+            <p class="element__title">Домбай <img src="./image/heart.jpg" alt="лайк" class="element__like"></p>
           </li>
-          
         </ul>
       </section>
-    <footer class="footer section">
-      <p class="footer__copyright"> &copy; 2020 Ивлев Артём</p>
-    </footer>
-  
+      <footer class="footer section">
+        <p class="footer__copyright"> &copy; 2020 Ивлев Артём</p>
+      </footer>
+
     </main>
   </div>
   <script href="script/edit-form.js"></script>
