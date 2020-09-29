@@ -33,14 +33,14 @@
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 
 
-/*            --popup--          */
-@import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__container/popup__conteiner.css);
-@import url(../blocks/popup/__content/popup__content.css);
-@import url(../blocks/popup/__text/popup__text.css);
-@import url(../blocks/popup/__title/popup__title.css);
-@import url(../blocks/popup/_is-opened/popup_is-opened.css);
-@import url(../blocks/popup/__close-btn/popup__close-btn.css);
-@import url(../blocks/popup/__save-btn/popup__save-btn.css);
-@import url(../blocks/popup/__text/_name/popup__text_name.css);
-@import url(../blocks/popup/__text/_discription/popup__text_discription.css);
+/*            --form--          */
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__container/form__conteiner.css);
+@import url(../blocks/form/__content/form__content.css);
+@import url(../blocks/form/__text/form__text.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/_is-opened/form_is-opened.css);
+@import url(../blocks/form/__close-btn/form__close-btn.css);
+@import url(../blocks/form/__save-btn/form__save-btn.css);
+@import url(../blocks/form/__text/_name/form__text_name.css);
+@import url(../blocks/form/__text/_discription/form__text_discription.css);
