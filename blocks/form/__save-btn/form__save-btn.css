@@ -13,7 +13,7 @@
   color: #FFFFFF;
 }
 
-.popup__save-btn:hover {
+.form__save-btn:hover {
   opacity: .8;
   cursor: pointer;
 }
