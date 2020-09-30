@@ -5,3 +5,16 @@
   margin-bottom: 4%;
   color: #ffffff;
 }
+
+@media screen and (max-width: 881px) {
+  .section {
+    max-width: 732px;
+  }
+}
+
+
+@media screen and (max-width: 581px) {
+  .section {
+    margin-bottom: 5%;
+  }
+}

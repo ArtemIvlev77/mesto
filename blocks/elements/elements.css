@@ -1,3 +1,11 @@
 .elements {
-margin-top: 200px;
+  max-width: 882px;
+  margin-top: 200px;
+}
+
+@media screen and (max-width: 881px) {
+  .elements {
+    
+    margin-top: 100px;
+  }
 }
