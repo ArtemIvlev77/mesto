@@ -2,3 +2,11 @@
   margin: 0;
   font-size: 18px;
 }
+
+@media screen and (max-width: 650px){
+  .profile__info_discription {
+      text-align: center;
+      font-size: 14px;
+      line-height: 17px;
+  }
+}

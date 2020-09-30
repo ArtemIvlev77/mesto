@@ -1,4 +1,11 @@
 .element__like {
-  max-width: 20px;
-  padding-right: 10px;
+  width: 21px;
+  margin-right: 10px;
+  background-image: url(../../../image/heart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  outline: none;
+  border-style: none;
+  object-fit: cover;
 }

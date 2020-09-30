@@ -17,8 +17,8 @@ let formElement = document.querySelector('.form__container'); // Восполь�
 let nameInput = document.querySelector('.form__text_name'); // Воспользуйтесь инструментом .querySelector()
 let jobInput = document.querySelector('.form__text_discription'); // Воспользуйтесь 
 
- nameInput.value += document.querySelector('.profile__info_name').textContent;
- jobInput.value += document.querySelector('.profile__info_discription').textContent;
+nameInput.value += document.querySelector('.profile__info_name').textContent;
+jobInput.value += document.querySelector('.profile__info_discription').textContent;
 // Получите значение полей из свойства value
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
@@ -32,5 +32,3 @@ function formSubmitHandler(evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', formSubmitHandler);
-
-console.log(nameInput.textContent, jobInput.textContent);

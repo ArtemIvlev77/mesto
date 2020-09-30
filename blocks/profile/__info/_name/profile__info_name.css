@@ -3,3 +3,11 @@
   font-weight: 500;
   font-size: 42px;
 }
+
+@media screen and (max-width: 650px) {
+  .profile__info_name {
+    font-size: 27px;
+    line-height: 2.07;
+    text-align: center;
+  }
+}

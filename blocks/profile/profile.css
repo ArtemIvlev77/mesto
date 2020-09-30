@@ -4,3 +4,13 @@
   display: grid;
   grid-template-columns: 170px 1fr 150px;
 }
+
+@media screen and (max-width: 650px) {
+  .profile {
+    grid-template-columns: 1fr;
+    max-height: 286px;
+    justify-content: center;
+    align-items: center;
+    justify-items: space-around;
+  }
+}
