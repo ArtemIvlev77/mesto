@@ -8,3 +8,10 @@ font-size: 24px;
 line-height: 29px;
 text-align: left;
 }
+
+@media screen and (max-width: 900px) {
+  .form__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

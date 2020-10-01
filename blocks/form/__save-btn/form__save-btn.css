@@ -17,3 +17,9 @@
   opacity: .8;
   cursor: pointer;
 }
+
+@media screen and (max-width: 900px) {
+  .form__save-btn {
+    max-width: 238px;
+  }
+}
