@@ -1,10 +1,10 @@
 const buttonOpenForm = document.querySelector(".profile__edit-btn");
 const buttonCloseForm = document.querySelector(".popup__close-btn");
-const form = document.querySelector(".popup");
+const popup = document.querySelector(".popup");
 
 
 const formToggle = () => {
-  form.classList.toggle("popup_is-opened");
+  popup.classList.toggle("popup_is-opened");
 
 };
 
@@ -13,22 +13,22 @@ buttonCloseForm.addEventListener("click", formToggle);
 
 
 
-const formElement = document.querySelector('.popup__container'); // Воспользуйтесь методом querySelector()
-const nameInput = document.querySelector('.popup__text_name'); // Воспользуйтесь инструментом .querySelector()
-const jobInput = document.querySelector('.popup__text_discription'); // Воспользуйтесь 
+const formElement = popup.querySelector('.popup__container');
+const nameInput = popup.querySelector('.popup__name-imput');
+const jobInput = popup.querySelector('.popup__job-input');
+const profileName = popup.querySelector('.profile__name');
+const profileJob = popup.querySelector('.profile__job');
 
-nameInput.value += document.querySelector('.profile__name').textContent;
-jobInput.value += document.querySelector('.profile__job').textContent;
-// Получите значение полей из свойства value
-// Обработчик «отправки» формы, хотя пока
-// она никуда отправляться не будет
+nameInput.value += profileName.textContent;
+jobInput.value += profileJob.textContent;
+
 function formSubmitHandler(evt) {
   evt.preventDefault();
-  document.querySelector('.profile__name').textContent = nameInput.value;
-  document.querySelector('.profile__job').textContent = jobInput.value;
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
   formToggle();
 }
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', formSubmitHandler);
+popup.addEventListener('submit', formSubmitHandler);

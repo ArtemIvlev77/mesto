@@ -1,8 +1,15 @@
-.popup__text_discription {
+.popup__job-input {
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width: 900px) {
+    .popup__job-input {
+       margin-bottom: 45px;
+    }
 }
