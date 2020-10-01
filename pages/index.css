@@ -19,10 +19,10 @@
 @import url(../blocks/profile/__job/profile__job.css);
 /*            --elements--          */
 @import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__container/elements__container.css);
 /*            --element--          */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__image/element__image.css);
-@import url(../blocks/element/__container/element__container.css);
 @import url(../blocks/element/__discription/element__discription.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__like/element__like.css);

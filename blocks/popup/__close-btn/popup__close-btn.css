@@ -1,7 +1,5 @@
 .popup__close-btn {
-  background-image: url(../../../image/popup_close.svg);
-  background-color: unset;
-  background-position: center;
+  background: url(../../../image/popup_close.svg) no-repeat center;
   padding: 0;
   border: unset;
   position: absolute;
