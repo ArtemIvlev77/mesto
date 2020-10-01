@@ -2,6 +2,11 @@
   margin: 18px 0;
   font-weight: 500;
   font-size: 42px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
+  max-width: 400px;
 }
 
 @media screen and (max-width: 650px) {
