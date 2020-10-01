@@ -4,7 +4,7 @@
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 730px) {
   .profile__info {
     align-content: center;
   }

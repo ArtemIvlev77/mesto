@@ -1,7 +1,6 @@
-.form__title {
+.popup__title {
   justify-self: flex-start;
   margin: 0;
-font-family: 'Inter', Arial, sans-serif;
 font-style: normal;
 font-weight: 900;
 font-size: 24px;
@@ -10,7 +9,7 @@ text-align: left;
 }
 
 @media screen and (max-width: 900px) {
-  .form__title {
+  .popup__title {
     font-size: 18px;
     line-height: 22px;
   }

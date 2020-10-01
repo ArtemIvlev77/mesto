@@ -1,6 +1,4 @@
 .element__title {
-  display: inline-block;
-  min-width: 0;
   width: calc(80%);
   font-weight: 900;
   font-size: 24px;

@@ -1,25 +1,26 @@
-.form__save-btn {
+.popup__save-btn {
   width: 358px;
   height: 50.15px;
   background: #000000;
   border-radius: 2px;
   transition: opacity 0.2s linear;
-  font-family: Inter;
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
   text-align: center;
   color: #FFFFFF;
-}
-
-.form__save-btn:hover {
-  opacity: .8;
   cursor: pointer;
 }
 
+.popup__save-btn:hover {
+  opacity: .8;
+  
+}
+
 @media screen and (max-width: 900px) {
-  .form__save-btn {
+  .popup__save-btn {
     max-width: 238px;
   }
 }
