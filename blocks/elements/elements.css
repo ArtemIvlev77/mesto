@@ -1,9 +1,11 @@
 .elements {
-  margin-bottom: 66px;
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-rows: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 18px;
+  justify-content: center;
 }
 
-@media screen and (max-width: 320px) {
-  .elements {
-    margin-bottom: 48px;
-  }
-}

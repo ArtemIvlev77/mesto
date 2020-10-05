@@ -4,7 +4,7 @@
   border: unset;
   position: absolute;
   top: -35px;
-  left: 425px;
+  right: -35px;
   width: 40.7px;
   height: 40.7px;
   transition: opacity 0.2s linear;
@@ -15,9 +15,9 @@
   opacity: .6;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px) {
   .popup__close-btn {
     top: -45px;
-    left: 250px
+    right: 0px;
   }
 }
