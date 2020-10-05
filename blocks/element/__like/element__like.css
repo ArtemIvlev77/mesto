@@ -1,9 +1,15 @@
 .element__like {
   width: 21px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 18px;
   background: #ffffff url(../../../image/heart.svg) no-repeat center;
   outline: none;
   border-style: none;
   object-fit: cover;
+}
+
+@media screen and (max-width: 320px){
+  .element__like {
+    margin-right: 22px;
+  }
 }
