@@ -17,7 +17,10 @@ const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup__
 const closeButtonPopupNewElement = popupNewElement.querySelector('.popup__new-element__close-btn');
 const closeButtonPopupElementPreview = popupElementPreview.querySelector('.popup__element-preview_close-btn');
 
+const saveButtonProfileEditor = popupProfileEditor.querySelector('.popup_profile-editor_save-btn');
 
+
+const formPopupProfileEdit = popupProfileEditor.querySelector('.popup__Profile-editor__form');
 
 const formElement = popupProfileEditor.querySelector('.popup__form');
 const nameInput = document.querySelector('.popup__name-input');
@@ -55,6 +58,9 @@ const initialCards = [
   }
 ]; 
 
+
+
+
 initialCards.forEach((data) => {
   const elementCard = elementTemplate.cloneNode(true).content;
   const element = elementCard.querySelector('.element');
@@ -76,6 +82,15 @@ const togglePopup = (popup) => {
   popup.classList.toggle('popup_is-opened');
 };
 
+const handlerSubmitProfile = (evt) => {
+evt.preventDefault();
+  profileName.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+  togglePopup(popupProfileEditor);
+};
+
+
+
 const bindListeners = () => {
   buttonOpenPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
   buttonOpenPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
@@ -83,6 +98,7 @@ const bindListeners = () => {
   closeButtonPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
   closeButtonPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
   closeButtonPopupElementPreview.addEventListener('click', () => togglePopup(popupElementPreview));
+  formPopupProfileEdit.addEventListener('submit', handlerSubmitProfile);
 };
 
 bindListeners();
