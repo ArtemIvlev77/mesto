@@ -10,4 +10,9 @@
   object-fit: cover;
   z-index: 1;
   cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+.element__remove-btn:hover {
+  opacity: .6;
 }

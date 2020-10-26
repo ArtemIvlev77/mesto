@@ -7,8 +7,11 @@
   border-style: none;
   object-fit: cover;
   cursor: pointer;
+  transition: opacity .2s linear;
 }
-
+.element__like-btn:hover {
+  opacity: .6;
+}
 
 @media screen and (max-width: 320px){
   .element__like {
