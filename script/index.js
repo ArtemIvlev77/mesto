@@ -15,8 +15,14 @@ const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup__
 const closeButtonPopupNewElement = popupNewElement.querySelector('.popup__new-element__close-btn');
 const closeButtonPopupElementPreview = popupElementPreview.querySelector('.popup__element-preview_close-btn');
 
+git<<<<<<< HEAD
+//save buttons
+const saveButtonProfileEditor = popupProfileEditor.querySelector('.popup_profile-editor_save-btn');
+const saveButtonNewElement = popupNewElement.querySelector('.popup__new-element_save-btn');
+=======
 const saveButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup_profile-editor_save-btn');
 const saveButtonPopupNewElement = popupNewElement.querySelector('.popup__new-element_save-btn');
+>>>>>>> e12882b3f5378999a55bce5175de2d69a065e9b4
 
 const formPopupProfileEdit = popupProfileEditor.querySelector('.popup__Profile-editor__form');
 const nameInput = document.querySelector('.popup__name-input');
@@ -26,6 +32,43 @@ const profileJob = document.querySelector('.profile__job');
 nameInput.value = profileName.textContent;
 jobInput.value = profileJob.textContent;
 
+<<<<<<< HEAD
+const formPopupNewElement = popupNewElement.querySelector('.popup__new-element-form');
+const inputNewElementTitle = popupNewElement.querySelector('.popup__new-element-title');
+const inputNewElementImage = popupNewElement.querySelector('.popup__new-element-link');
+
+const initialCards = [
+  {
+      name: 'Архыз',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+      name: 'Челябинская область',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+      name: 'Иваново',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+      name: 'Камчатка',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+      name: 'Холмогорский район',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+      name: 'Байкал',
+      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+]; 
+
+
+
+
+initialCards.forEach((data) => {
+=======
 const popupNewElemntForm = popupNewElement.querySelector('.popup__new-element_form');
 const popupNewElementTitle = popupNewElemntForm.querySelector('.popup__element-title');
 const popupNewElementImage = popupNewElemntForm.querySelector('.popup__element-link');
@@ -68,6 +111,7 @@ const initialCards = [{
 
 
 const getElementItems = (elementItem) => {
+>>>>>>> e12882b3f5378999a55bce5175de2d69a065e9b4
   const elementCard = elementTemplate.cloneNode(true).content;
   const element = elementCard.querySelector('.element');
   const elementTitle = elementCard.querySelector('.element__title');
@@ -124,6 +168,21 @@ const handlerSubmitProfile = (evt) => {
 
 const handlerSubmitNewElement = (evt) => {
   evt.preventDefault();
+<<<<<<< HEAD
+  const elementCard = elementTemplate.cloneNode(true).content;
+  const element = elementCard.querySelector('.element');
+  const elementTitle = elementCard.querySelector('.element__title');
+  const elementImage = elementCard.querySelector('.element__image');
+
+  elementTitle.textContent = inputNewElementTitle.value;
+  elementImage.src = inputNewElementImage.value;
+  elementImage.alt = inputNewElementTitle.value;
+
+  elementContainer.prepend(elementCard);
+  togglePopup(popupNewElement);
+};
+
+=======
   const elementItem = getElementItems({
         name: popupNewElementTitle.value,
         link: popupNewElementImage.value,
@@ -132,6 +191,7 @@ const handlerSubmitNewElement = (evt) => {
     elementContainer.prepend(elementItem);
     togglePopup(popupNewElement);
 };
+>>>>>>> e12882b3f5378999a55bce5175de2d69a065e9b4
 
 
 const bindListeners = () => {
@@ -141,7 +201,11 @@ const bindListeners = () => {
   closeButtonPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
   closeButtonPopupElementPreview.addEventListener('click', () => togglePopup(popupElementPreview));
   formPopupProfileEdit.addEventListener('submit', handlerSubmitProfile);
+<<<<<<< HEAD
+  formPopupNewElement.addEventListener('submit', handlerSubmitNewElement);
+=======
   popupNewElement.addEventListener('submit', handlerSubmitNewElement);
+>>>>>>> e12882b3f5378999a55bce5175de2d69a065e9b4
 };
 
 
