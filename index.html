@@ -31,11 +31,11 @@
       <footer class="footer page__section">
         <p class="footer__copyright"> &copy; 2020 Ивлев Артём</p>
       </footer>
-      <div class="popup popup__ProfileEditor">
+      <div class="popup popup__profile-editor">
         <div class="popup__container">
           <button type="button" class="popup__close-btn popup__profile-editor_close-btn"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__Profile-editor__form">
+          <form class="popup__profile-editor__form">
           <input type="text" class="popup__text popup__name-input">
           <input type="text" class="popup__text popup__job-input">
           <button type="submit" class="popup__save-btn popup_profile-editor_save-btn">Сохранить</button>
@@ -66,9 +66,9 @@
 
     <template id="element__template">
       <li class="element">
-        <img src="" alt="" class="element__image">
+        <button type="button" class="element__image-btn"><img src="" alt="" class="element__image"></button>
         <button class="element__remove-btn"></button>
-        <div class="element__discription">
+        <div class="element__discription"> 
           <h3 class="element__title"></h3><button class="element__like-btn"></button>
         </div>
       </li>

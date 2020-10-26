@@ -1,0 +1,20 @@
+.element__image-btn {
+  background: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border-style: none;
+  cursor: pointer;
+  transition: opacity .2s linear;
+}
+
+
+.element__image-btn:hover {
+  opacity: .8;
+}
+
+.element__image-btn:focus {
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
