@@ -1,4 +1,4 @@
-.element__like {
+.element__like-btn {
   width: 21px;
   height: 20px;
   margin-right: 18px;
@@ -6,7 +6,9 @@
   outline: none;
   border-style: none;
   object-fit: cover;
+  cursor: pointer;
 }
+
 
 @media screen and (max-width: 320px){
   .element__like {

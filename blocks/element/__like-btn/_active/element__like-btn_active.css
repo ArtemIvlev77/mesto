@@ -1,0 +1,4 @@
+.element__like_active {
+  background: url(../../../../image/heart_active.svg) no-repeat;
+  border: none;
+}

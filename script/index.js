@@ -6,6 +6,7 @@ const popupElementPreview = document.querySelector('.popup__element-preview');
 const elementTemplate = document.querySelector('#element__template');
 const elementContainer = document.querySelector('.elements');
 
+
 const buttonOpenPopupProfileEditor = document.querySelector('.profile__edit-btn');
 const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
 
@@ -63,19 +64,36 @@ const initialCards = [{
     alt: 'Байкал'
 }];
 
+
+
+
 const getElementItems = (elementItem) => {
   const elementCard = elementTemplate.cloneNode(true).content;
   const element = elementCard.querySelector('.element');
   const elementTitle = elementCard.querySelector('.element__title');
   const elementImage = elementCard.querySelector('.element__image');
+  const elementRemoveBtn = elementCard.querySelector('.element__remove-btn');
+  const elementLikeBtn = elementCard.querySelector('.element__like-btn');
 
   elementImage.addEventListener('click', () => handleElementPreview(elementItem));
+  elementRemoveBtn.addEventListener('click', handleRemoveElement);
+  elementLikeBtn.addEventListener('click', handleLikeElement);
 
   elementTitle.textContent = elementItem.name;
   elementImage.src = elementItem.link;
   elementImage.alt = elementItem.name;
 
   return elementCard;
+};
+
+const handleLikeElement = (event) => {
+  const likeBtn = event.target.closest('.element__like-btn');
+    likeBtn.classList.toggle('element__like_active');
+  };
+
+
+const handleRemoveElement = (event) => {
+  event.target.closest('.element').remove();
 };
 
 const handleElementPreview = (elementItem) => {
@@ -95,6 +113,7 @@ initialCards.forEach((data) => {
 const togglePopup = (popup) => {
   popup.classList.toggle('popup_is-opened');
 };
+
 
 const handlerSubmitProfile = (evt) => {
   evt.preventDefault();
@@ -124,5 +143,7 @@ const bindListeners = () => {
   formPopupProfileEdit.addEventListener('submit', handlerSubmitProfile);
   popupNewElement.addEventListener('submit', handlerSubmitNewElement);
 };
+
+
 
 bindListeners();

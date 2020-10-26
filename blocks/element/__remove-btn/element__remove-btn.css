@@ -1,0 +1,13 @@
+.element__remove-btn {
+  width: 18px;
+  height: 19px;
+  position: relative;
+  bottom: 265px;
+  left: 250px;
+  background: url(../../../image/Trash.svg) no-repeat center;
+  outline: none;
+  border-style: none;
+  object-fit: cover;
+  z-index: 1;
+  cursor: pointer;
+}
