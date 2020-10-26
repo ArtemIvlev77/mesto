@@ -8,9 +8,8 @@ const elementContainer = document.querySelector('.elements');
 const buttonOpenPopupProfileEditor = document.querySelector('.profile__edit-btn');
 const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
 
-const closeButton = document.querySelector('.popup__close-btn');
 const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup__profile-editor_close-btn');
-const closeButtonPopupNewElement = popupNewElement.querySelector('.popup__new-element__close-btn');
+const closeButtonPopupNewElement = popupNewElement.querySelector('.popup__new-element_close-btn');
 const closeButtonPopupElementPreview = popupElementPreview.querySelector('.popup__element-preview_close-btn');
 
 const formPopupProfileEdit = popupProfileEditor.querySelector('.popup__profile-editor__form');
@@ -21,9 +20,9 @@ const profileJob = document.querySelector('.profile__job');
 nameInput.value = profileName.textContent;
 jobInput.value = profileJob.textContent;
 
-const popupNewElemntForm = popupNewElement.querySelector('.popup__new-element_form');
-const popupNewElementTitle = popupNewElemntForm.querySelector('.popup__element-title');
-const popupNewElementImage = popupNewElemntForm.querySelector('.popup__element-link');
+const popupNewElementForm = popupNewElement.querySelector('.popup__new-element_form');
+const popupNewElementTitle = popupNewElementForm.querySelector('.popup__element-title');
+const popupNewElementImage = popupNewElementForm.querySelector('.popup__element-link');
 
 const popupElementPreviewImage = popupElementPreview.querySelector('.popup__image-preview');
 const popupElementPreviewTitle = popupElementPreview.querySelector('.popup__title_image-preview');
@@ -123,15 +122,9 @@ const handleSubmitNewElement = (evt) => {
 const bindListeners = () => {
   buttonOpenPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
   buttonOpenPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
-  closeButton.addEventListener('click', (event) => {
-    if (event.target == popupProfileEditor) {
-      togglePopup(popupProfileEditor);
-    }
-  });
-
-  // closeButtonPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
-  // closeButtonPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
-  // closeButtonPopupElementPreview.addEventListener('click', () => togglePopup(popupElementPreview));
+  closeButtonPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
+  closeButtonPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
+  closeButtonPopupElementPreview.addEventListener('click', () => togglePopup(popupElementPreview));
   formPopupProfileEdit.addEventListener('submit', handleSubmitProfile);
   popupNewElement.addEventListener('submit', handleSubmitNewElement);
 };
