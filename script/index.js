@@ -1,5 +1,3 @@
-
-
 const popup = document.querySelector('.popup');
 const popupProfileEditor = document.querySelector('.popup__ProfileEditor');
 const popupNewElement = document.querySelector('.popup__new-element');
@@ -28,47 +26,58 @@ const profileJob = document.querySelector('.profile__job');
 nameInput.value = profileName.textContent;
 jobInput.value = profileJob.textContent;
 
-const popupNewElementTitle = popupNewElement.querySelector('.popup__element-title');
-const popupNewElementImage = popupNewElement.querySelector('.popup__element-link');
+const popupNewElemntForm = popupNewElement.querySelector('.popup__new-element_form');
+const popupNewElementTitle = popupNewElemntForm.querySelector('.popup__element-title');
+const popupNewElementImage = popupNewElemntForm.querySelector('.popup__element-link');
 
-const initialCards = [
-  {
-      name: 'Архыз',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-      name: 'Челябинская область',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-      name: 'Иваново',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-      name: 'Камчатка',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]; 
+const initialCards = [{
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+    alt: 'Архыз'
+},
+        {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+    alt: 'Челябинская область'
+},
+        {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+    alt: 'Иваново'
+},
+        {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+    alt: 'Камчатка'
+},
+        {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
+    alt: 'Холмогорский район'
+},
+        {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+    alt: 'Байкал'
+}];
 
-initialCards.forEach((data) => {
+const getElementItems = (elementItem) => {
   const elementCard = elementTemplate.cloneNode(true).content;
   const element = elementCard.querySelector('.element');
   const elementTitle = elementCard.querySelector('.element__title');
   const elementImage = elementCard.querySelector('.element__image');
 
-  elementTitle.textContent = data.name;
-  elementImage.src = data.link;
-  elementImage.alt = data.name;
+  elementTitle.textContent = elementItem.name;
+  elementImage.src = elementItem.link;
+  elementImage.alt = elementItem.name;
 
-  elementContainer.append(elementCard);
+  return elementCard;
+};
+
+
+initialCards.forEach((data) => {
+  const renderElements = getElementItems(data);
+    elementContainer.append(renderElements);
 });
 
 
@@ -77,7 +86,7 @@ const togglePopup = (popup) => {
 };
 
 const handlerSubmitProfile = (evt) => {
-evt.preventDefault();
+  evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   togglePopup(popupProfileEditor);
@@ -85,20 +94,14 @@ evt.preventDefault();
 
 const handlerSubmitNewElement = (evt) => {
   evt.preventDefault();
-  const elementCard = elementTemplate.cloneNode(true).content;
-  const element = elementCard.querySelector('.element');
-  const elementTitle = elementCard.querySelector('.element__title');
-  const elementImage = elementCard.querySelector('.element__image');
-
-  elementTitle.textContent = popupNewElementTitle.value;
-  elementImage.src = popupNewElementImage.value;
-  elementImage.alt = popupNewElementTitle.value;
-
-  elementContainer.prepend(elementCard);
-
-  togglePopup(popupNewElement);
-}
-
+  const elementItem = getElementItems({
+        name: popupNewElementTitle.value,
+        link: popupNewElementImage.value,
+        alt: popupNewElementTitle.value
+    });
+    elementContainer.prepend(elementItem);
+    togglePopup(popupNewElement);
+};
 
 
 const bindListeners = () => {
@@ -113,39 +116,3 @@ const bindListeners = () => {
 };
 
 bindListeners();
-
-
-
-
-// const popup = document.querySelector(".popup");
-// const buttonOpenForm = document.querySelector(".profile__edit-btn");
-// const buttonCloseForm = popup.querySelector(".popup__close-btn");
-
-// const formElement = popup.querySelector('.popup__form');
-// const nameInput = formElement.querySelector('.popup__name-input');
-// const jobInput = formElement.querySelector('.popup__job-input');
-// const profileName = document.querySelector('.profile__name');
-// const profileJob = document.querySelector('.profile__job');
-
-// const formToggle = () => {
-//   popup.classList.toggle("popup_is-opened");
-//   nameInput.value = profileName.textContent;
-//   jobInput.value = profileJob.textContent;
-// };
-
-
-
-
-// buttonOpenForm.addEventListeaner("click", formToggle);
-// buttonCloseForm.addEventListener("click", formToggle);
-
-// function formSubmitHandler(evt) {
-//   evt.preventDefault();  
-//   profileName.textContent = nameInput.value;
-//   profileJob.textContent = jobInput.value;
-//   formToggle();
-// }
-
-
-
-// formElement.addEventListener('submit', formSubmitHandler);
