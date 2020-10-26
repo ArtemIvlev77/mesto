@@ -8,7 +8,6 @@ const elementContainer = document.querySelector('.elements');
 
 const buttonOpenPopupProfileEditor = document.querySelector('.profile__edit-btn');
 const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
-const buttonOpenPopupElementPreview = document.querySelector('.element__image'); // надо исправить с evt.target
 
 
 const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup__profile-editor_close-btn');
@@ -29,6 +28,9 @@ jobInput.value = profileJob.textContent;
 const popupNewElemntForm = popupNewElement.querySelector('.popup__new-element_form');
 const popupNewElementTitle = popupNewElemntForm.querySelector('.popup__element-title');
 const popupNewElementImage = popupNewElemntForm.querySelector('.popup__element-link');
+
+const popupElementPreviewImage = popupElementPreview.querySelector('.popup__image-preview');
+const popupElementPreviewTitle = popupElementPreview.querySelector('.popup__title_image-preview');
 
 const initialCards = [{
     name: 'Архыз',
@@ -67,11 +69,20 @@ const getElementItems = (elementItem) => {
   const elementTitle = elementCard.querySelector('.element__title');
   const elementImage = elementCard.querySelector('.element__image');
 
+  elementImage.addEventListener('click', () => handleElementPreview(elementItem));
+
   elementTitle.textContent = elementItem.name;
   elementImage.src = elementItem.link;
   elementImage.alt = elementItem.name;
 
   return elementCard;
+};
+
+const handleElementPreview = (elementItem) => {
+  popupElementPreviewImage.src = elementItem.link;
+  popupElementPreviewImage.alt = `Изображение ${elementItem.name}`;
+  popupElementPreviewTitle.textContent = elementItem.name;
+  togglePopup(popupElementPreview);
 };
 
 
@@ -107,7 +118,6 @@ const handlerSubmitNewElement = (evt) => {
 const bindListeners = () => {
   buttonOpenPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
   buttonOpenPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
-  buttonOpenPopupElementPreview.addEventListener('click', () => togglePopup(popupElementPreview));
   closeButtonPopupProfileEditor.addEventListener('click', () => togglePopup(popupProfileEditor));
   closeButtonPopupNewElement.addEventListener('click', () => togglePopup(popupNewElement));
   closeButtonPopupElementPreview.addEventListener('click', () => togglePopup(popupElementPreview));
