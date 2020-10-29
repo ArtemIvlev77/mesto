@@ -20,9 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9027b2d7-95f3-40c1-9c37-88c365b1a640" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__save-btn/_disabled/popup__save-btn_disabled.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image-btn/element__image-btn.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image-btn/element__image-btn.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +50,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -60,6 +62,9 @@
       <option name="presentableId" value="Default" />
       <updated>1602098971695</updated>
       <workItem from="1602098973688" duration="350000" />
+      <workItem from="1603781484069" duration="279000" />
+      <workItem from="1603781780116" duration="4370000" />
+      <workItem from="1603975117519" duration="1101000" />
     </task>
     <servers />
   </component>
@@ -87,14 +92,16 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="278" y="168" key="MultipleFileMergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1603742460680" />
-    <state x="431" y="127" key="RollbackChangesDialog" timestamp="1603745381422">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="647" y="165" key="RollbackChangesDialog" timestamp="1603788811742">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="431" y="127" key="RollbackChangesDialog/0.0.1280.800@0.0.1280.800" timestamp="1603745381422" />
-    <state x="141" y="39" key="SettingsEditor" timestamp="1603745604175">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="647" y="165" key="RollbackChangesDialog/0.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1603788811742" />
+    <state x="212" y="51" key="SettingsEditor" timestamp="1603781760841">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1603745604175" />
+    <state x="212" y="51" key="SettingsEditor/0.0.1920.1040/1920.0.1600.860@0.0.1920.1040" timestamp="1603781760841" />
     <state x="338" y="32" width="604" height="735" key="find.popup" timestamp="1603745385065">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
