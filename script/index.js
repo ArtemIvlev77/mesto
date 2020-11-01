@@ -120,9 +120,14 @@ const openPopup = (popup) => {
   }
 };
 
-const popupNewElementReset = () => {
+const popupNewElementReset = (qualifiedName, value) => {
   const forms = popupNewElement.querySelector('.popup__form');
+  const spanError = Array.from(popupNewElement.querySelectorAll(".popup__error"));
+  spanError.forEach(value => {
+    value.textContent='';
+      });
   forms.reset();
+
 }
 
 const closePopup = (popup) => {
