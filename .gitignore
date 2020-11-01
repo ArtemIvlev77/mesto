@@ -78,3 +78,4 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+.idea/workspace.xml

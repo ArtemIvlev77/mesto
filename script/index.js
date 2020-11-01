@@ -1,5 +1,4 @@
 
-
 const popupProfileEditor = document.querySelector('.popup__profile-editor');
 const popupNewElement = document.querySelector('.popup__new-element');
 const popupElementPreview = document.querySelector('.popup__element-preview');
@@ -27,6 +26,7 @@ const popupNewElementTitle = popupNewElementForm.querySelector('.popup__element-
 const popupNewElementImage = popupNewElementForm.querySelector('.popup__element-link');
 const popupElementPreviewImage = popupElementPreview.querySelector('.popup__image-preview');
 const popupElementPreviewTitle = popupElementPreview.querySelector('.popup__title_image-preview');
+
 
 const initialCards = [{
   name: 'Архыз',
@@ -95,8 +95,6 @@ initialCards.forEach((data) => {
   elementContainer.append(renderElements);
 });
 
-
-
 closePopupEscBtn = (evt) => {
   if (evt.key === 'Escape') {
     const activePopup = document.querySelector('.popup_is-opened');
@@ -121,6 +119,11 @@ const openPopup = (popup) => {
     document.addEventListener('keydown', closePopupEscBtn);
   }
 };
+
+const popupNewElementReset = () => {
+  const forms = popupNewElement.querySelector('.popup__form');
+  forms.reset();
+}
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_is-opened');
@@ -171,6 +174,7 @@ const activePopup = document.querySelector('.popup_is-opened');
 const bindListeners = () => {
   buttonOpenPopupProfileEditor.addEventListener('click', () => openPopup(popupProfileEditor));
   buttonOpenPopupNewElement.addEventListener('click', () => openPopup(popupNewElement));
+  buttonOpenPopupNewElement.addEventListener('click', popupNewElementReset);
   closeButtonPopupNewElement.addEventListener('click', () => closePopup(popupNewElement));
   closeButtonPopupProfileEditor.addEventListener('click', () => closePopup(popupProfileEditor));
   closeButtonPopupElementPreview.addEventListener('click', () => closePopup(popupElementPreview));
@@ -178,8 +182,8 @@ const bindListeners = () => {
   popupNewElement.addEventListener('submit', handleSubmitNewElement);
   popupNewElement.addEventListener('keydown', submitNewElementPopupByEnterKey);
   popupNewElement.addEventListener('click', closePopupByClickOnOverlay);
-  popupProfileEditor.addEventListener('click', closePopupByClickOnOverlay)
-  popupElementPreview.addEventListener('click', closePopupByClickOnOverlay)
+  popupProfileEditor.addEventListener('click', closePopupByClickOnOverlay);
+  popupElementPreview.addEventListener('click', closePopupByClickOnOverlay);
 };
 
 bindListeners();
