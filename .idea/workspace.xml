@@ -16,18 +16,42 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/hotfix" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9027b2d7-95f3-40c1-9c37-88c365b1a640" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__error/popup__error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__save-btn/_invalid/popup__save-btn_invalid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blocks/popup/__text/_invalid/popup__text_invalid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image-btn/element__image-btn.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image-btn/element__image-btn.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/element/__image/element__image.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/element/__image/element__image.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__container/popup__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__text/popup__text.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__text/popup__text.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blocks/popup/__title/popup__title.css" beforeDir="false" afterPath="$PROJECT_DIR$/blocks/popup/__title/popup__title.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/script/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,6 +64,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="js.introduce.parameter.generate.optional" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -48,8 +73,18 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="validation.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/script/validation.js" working-dir="$PROJECT_DIR$/script">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.validation.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -79,6 +114,78 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="342" y="105" key="#JavaScript" timestamp="1604166963474">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="342" y="105" key="#JavaScript/0.23.1280.732@0.23.1280.732" timestamp="1604166963474" />
+    <state x="137" y="126" key="DiffContextDialog" timestamp="1604182970409">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state x="137" y="126" key="DiffContextDialog/0.23.1280.732@0.23.1280.732" timestamp="1604182970409" />
+    <state width="1208" height="364" key="GridCell.Tab.0.bottom" timestamp="1604184744890">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="364" key="GridCell.Tab.0.bottom/0.23.1280.732@0.23.1280.732" timestamp="1604184744890" />
+    <state width="1208" height="364" key="GridCell.Tab.0.center" timestamp="1604184744890">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="364" key="GridCell.Tab.0.center/0.23.1280.732@0.23.1280.732" timestamp="1604184744890" />
+    <state width="1208" height="364" key="GridCell.Tab.0.left" timestamp="1604184744889">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="364" key="GridCell.Tab.0.left/0.23.1280.732@0.23.1280.732" timestamp="1604184744889" />
+    <state width="1208" height="364" key="GridCell.Tab.0.right" timestamp="1604184744890">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="364" key="GridCell.Tab.0.right/0.23.1280.732@0.23.1280.732" timestamp="1604184744890" />
+    <state width="1208" height="228" key="GridCell.Tab.1.bottom" timestamp="1604184566512">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.1.bottom/0.23.1280.732@0.23.1280.732" timestamp="1604184566512" />
+    <state width="1208" height="228" key="GridCell.Tab.1.center" timestamp="1604184566512">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.1.center/0.23.1280.732@0.23.1280.732" timestamp="1604184566512" />
+    <state width="1208" height="228" key="GridCell.Tab.1.left" timestamp="1604184566511">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.1.left/0.23.1280.732@0.23.1280.732" timestamp="1604184566511" />
+    <state width="1208" height="228" key="GridCell.Tab.1.right" timestamp="1604184566512">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.1.right/0.23.1280.732@0.23.1280.732" timestamp="1604184566512" />
+    <state width="1208" height="228" key="GridCell.Tab.2.bottom" timestamp="1604184566513">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.2.bottom/0.23.1280.732@0.23.1280.732" timestamp="1604184566513" />
+    <state width="1208" height="228" key="GridCell.Tab.2.center" timestamp="1604184566513">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.2.center/0.23.1280.732@0.23.1280.732" timestamp="1604184566513" />
+    <state width="1208" height="228" key="GridCell.Tab.2.left" timestamp="1604184566512">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.2.left/0.23.1280.732@0.23.1280.732" timestamp="1604184566512" />
+    <state width="1208" height="228" key="GridCell.Tab.2.right" timestamp="1604184566513">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.2.right/0.23.1280.732@0.23.1280.732" timestamp="1604184566513" />
+    <state width="1208" height="228" key="GridCell.Tab.3.bottom" timestamp="1604184566514">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.3.bottom/0.23.1280.732@0.23.1280.732" timestamp="1604184566514" />
+    <state width="1208" height="228" key="GridCell.Tab.3.center" timestamp="1604184566514">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.3.center/0.23.1280.732@0.23.1280.732" timestamp="1604184566514" />
+    <state width="1208" height="228" key="GridCell.Tab.3.left" timestamp="1604184566514">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.3.left/0.23.1280.732@0.23.1280.732" timestamp="1604184566514" />
+    <state width="1208" height="228" key="GridCell.Tab.3.right" timestamp="1604184566514">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="1208" height="228" key="GridCell.Tab.3.right/0.23.1280.732@0.23.1280.732" timestamp="1604184566514" />
     <state x="128" y="69" key="MergeDialog" timestamp="1603742460637">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -87,21 +194,36 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="278" y="168" key="MultipleFileMergeDialog/0.0.1280.800@0.0.1280.800" timestamp="1603742460680" />
-    <state x="431" y="127" key="RollbackChangesDialog" timestamp="1603745381422">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="430" y="139" key="RollbackChangesDialog" timestamp="1604182972854">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="431" y="127" key="RollbackChangesDialog/0.0.1280.800@0.0.1280.800" timestamp="1603745381422" />
-    <state x="141" y="39" key="SettingsEditor" timestamp="1603745604175">
+    <state x="430" y="139" key="RollbackChangesDialog/0.23.1280.732@0.23.1280.732" timestamp="1604182972854" />
+    <state x="141" y="39" key="SettingsEditor" timestamp="1604209961282">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1603745604175" />
-    <state x="338" y="32" width="604" height="735" key="find.popup" timestamp="1603745385065">
+    <state x="141" y="39" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1604209961282" />
+    <state x="141" y="33" key="SettingsEditor/0.23.1280.732@0.23.1280.732" timestamp="1604157356303" />
+    <state x="438" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604153227956">
       <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="438" y="321" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.800@0.0.1280.800" timestamp="1604153227956" />
+    <state x="338" y="52" width="604" height="673" key="find.popup" timestamp="1604174933067">
+      <screen x="0" y="23" width="1280" height="732" />
     </state>
     <state x="338" y="32" width="604" height="735" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1603745385065" />
+    <state x="338" y="52" width="604" height="673" key="find.popup/0.23.1280.732@0.23.1280.732" timestamp="1604174933067" />
+    <state width="600" height="428" key="javadoc.popup" timestamp="1604187229852">
+      <screen x="0" y="23" width="1280" height="732" />
+    </state>
+    <state width="600" height="428" key="javadoc.popup/0.23.1280.732@0.23.1280.732" timestamp="1604187229852" />
     <state x="394" y="281" width="614" height="269" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1603745423061">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="394" y="281" width="614" height="269" key="org.intellij.images.editor.actions.BackgroundImageDialog/0.0.1280.800@0.0.1280.800" timestamp="1603745423061" />
+    <state x="483" y="181" key="refactoring.ChangeSignatureDialog" timestamp="1604215026831">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="483" y="181" key="refactoring.ChangeSignatureDialog/0.0.1280.800@0.0.1280.800" timestamp="1604215026831" />
   </component>
 </project>

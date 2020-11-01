@@ -35,9 +35,11 @@
         <div class="popup__container">
           <button type="button" class="popup__close-btn popup__profile-editor_close-btn"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="popup__profile-editor__form">
-          <input type="text" class="popup__text popup__name-input">
-          <input type="text" class="popup__text popup__job-input">
+          <form class="popup__form popup__profile-editor_form" novalidate>
+          <input id="profile-name" type="text" class="popup__text popup__name-input" required minlength="2" maxlength="40">
+              <span id="profile-name-error" class="popup__error"></span>
+          <input id="profile-job" type="text" class="popup__text popup__job-input" required minlength="2" maxlength="200">
+              <span id="profile-job-error" class="popup__error"></span>
           <button type="submit" class="popup__save-btn popup_profile-editor_save-btn">Сохранить</button>
         </form>
         </div>
@@ -48,10 +50,13 @@
       <div class="popup__container">
         <button type="button" class="popup__close-btn popup__new-element_close-btn"></button>
         <h2 class="popup__title">Новое место</h2>
-        <form class="popup__new-element_form">
-        <input type="text" class="popup__text popup__element-title" placeholder="Название">
-        <input type="text" class="popup__text popup__element-link" placeholder="Ссылка на картинку">
+        <form class="popup__form popup__new-element_form" novalidate>
+        <input id="new-element-name" type="text" class="popup__text popup__element-title" placeholder="Название" required minlength="2" maxlength="30">
+            <span id="new-element-name-error" class="popup__error"></span>
+        <input id="url-element" type="url" class="popup__text popup__element-link" placeholder="Ссылка на картинку" required>
+            <span id="url-element-error" class="popup__error"></span>
         <button type="submit" class="popup__save-btn popup__new-element_save-btn">Сохранить</button>
+        </form>
     </div>
   </div>
 
@@ -74,6 +79,7 @@
       </li>
     </template>
     <script src="./script/index.js"></script>
+    <script src="./script/validation.js"></script>
   </body>
 
   </html>
