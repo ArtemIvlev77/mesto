@@ -28,10 +28,7 @@ function toggleButtonState(formElement, buttonElement, {inactiveButtonClass, ...
   }
 }
 
-/**
- * @param inactiveButtonClass
- * @param formElement
- */
+
 function setEventListeners(formElement, {inputSelector, submitButtonSelector, ...rest}) {
   const inputElements = Array.from(formElement.querySelectorAll(inputSelector));
   const buttonElement = formElement.querySelector(submitButtonSelector);
