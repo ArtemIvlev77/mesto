@@ -1,10 +1,11 @@
+import {Card} from './Card.js';
+import {FormValidator} from './FormValidator.js';
+
 
 const popupProfileEditor = document.querySelector('.popup__profile-editor');
 const popupNewElement = document.querySelector('.popup__new-element');
 const popupElementPreview = document.querySelector('.popup__element-preview');
 
-const elementTemplate = document.querySelector('#element__template');
-const elementContainer = document.querySelector('.elements');
 
 const buttonOpenPopupProfileEditor = document.querySelector('.profile__edit-btn');
 const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
@@ -24,8 +25,9 @@ jobInput.value = profileJob.textContent;
 const popupNewElementForm = popupNewElement.querySelector('.popup__new-element_form');
 const popupNewElementTitle = popupNewElementForm.querySelector('.popup__element-title');
 const popupNewElementImage = popupNewElementForm.querySelector('.popup__element-link');
-const popupElementPreviewImage = popupElementPreview.querySelector('.popup__image-preview');
-const popupElementPreviewTitle = popupElementPreview.querySelector('.popup__title_image-preview');
+
+
+const elementContainer = document.querySelector('.elements');
 
 
 const initialCards = [{
@@ -55,47 +57,53 @@ const initialCards = [{
 }];
 
 
-const getElementItem = (elementItem) => {
-  const elementCard = elementTemplate.cloneNode(true).content;
-  const elementTitle = elementCard.querySelector('.element__title');
-  const elementImage = elementCard.querySelector('.element__image');
-  const elementRemoveBtn = elementCard.querySelector('.element__remove-btn');
-  const elementLikeBtn = elementCard.querySelector('.element__like-btn');
-  const elementImageBtn = elementCard.querySelector('.element__image-btn');
 
-  elementImageBtn.addEventListener('click', () => handleElementPreview(elementItem));
-  elementRemoveBtn.addEventListener('click', handleRemoveElement);
-  elementLikeBtn.addEventListener('click', handleLikeElement);
 
-  elementTitle.textContent = elementItem.name;
-  elementImage.src = elementItem.link;
-  elementImage.alt = elementItem.name;
 
-  return elementCard;
-};
 
-const handleLikeElement = (event) => {
-  const likeBtn = event.target.closest('.element__like-btn');
-  likeBtn.classList.toggle('element__like_active');
-};
 
-const handleRemoveElement = (event) => {
-  event.target.closest('.element').remove();
-};
+// const getElementItem = (elementItem) => {
+//   const elementCard = elementTemplate.cloneNode(true).content;
+//   const elementTitle = elementCard.querySelector('.element__title');
+//   const elementImage = elementCard.querySelector('.element__image');
+//   const elementRemoveBtn = elementCard.querySelector('.element__remove-btn');
+//   const elementLikeBtn = elementCard.querySelector('.element__like-btn');
+//   const elementImageBtn = elementCard.querySelector('.element__image-btn');
 
-const handleElementPreview = (elementItem) => {
-  popupElementPreviewImage.src = elementItem.link;
-  popupElementPreviewImage.alt = `Изображение ${elementItem.name}`;
-  popupElementPreviewTitle.textContent = elementItem.name;
+//   elementImageBtn.addEventListener('click', () => handleElementPreview(elementItem));
+//   elementRemoveBtn.addEventListener('click', handleRemoveElement);
+//   elementLikeBtn.addEventListener('click', handleLikeElement);
+
+//   elementTitle.textContent = elementItem.name;
+//   elementImage.src = elementItem.link;
+//   elementImage.alt = elementItem.name;
+
+//   return elementCard;
+// };
+
+
+const popupElementPreviewImage = popupElementPreview.querySelector('.popup__image-preview');
+const popupElementPreviewTitle = popupElementPreview.querySelector('.popup__title_image-preview');
+
+const handleElementPreview = (name, link) => {
+  popupElementPreviewImage.src = link;
+  popupElementPreviewTitle.alt = name;
+  popupElementPreviewTitle.textContent = name;
   openPopup(popupElementPreview);
-};
+}
 
-initialCards.forEach((data) => {
-  const renderElements = getElementItem(data);
-  elementContainer.append(renderElements);
-});
 
-closePopupEscBtn = (evt) => {
+function addElement(data) {
+  const element = new Card(data.name, data.link, '.element__template', handleElementPreview)
+  const newElement = element.render()
+  elementContainer.append(newElement);
+  console.log(handleElementPreview);
+}
+
+initialCards.forEach(addElement);
+
+
+const closePopupEscBtn = (evt) => {
   if (evt.key === 'Escape') {
     const activePopup = document.querySelector('.popup_is-opened');
     if (activePopup.classList.contains('popup__profile-editor')) {
@@ -120,7 +128,7 @@ const openPopup = (popup) => {
   }
 };
 
-const popupNewElementReset = (qualifiedName, value) => {
+const popupNewElementReset = (value, formElement) => {
   const forms = popupNewElement.querySelector('.popup__form');
   const spanError = Array.from(popupNewElement.querySelectorAll(".popup__error"));
   spanError.forEach(value => {
@@ -156,13 +164,11 @@ const submitNewElementPopupByEnterKey = (evt) => {
 
 const handleSubmitNewElement = (evt) => {
   evt.preventDefault();
-  const elementItem = getElementItem({
-    name: popupNewElementTitle.value,
-    link: popupNewElementImage.value,
-    alt: popupNewElementTitle.value
-  });
-  elementContainer.prepend(elementItem);
-  closePopup(popupNewElement);
+  const addElement = data => {
+    const element = new Card (data.name, data.link, '.element__template', handleElementPreview);
+    element.render(elementContainer);
+  };
+  elementContainer.prepend(addElement);
   popupNewElementTitle.value = '';
   popupNewElementImage.value = '';
 };
@@ -192,4 +198,3 @@ const bindListeners = () => {
 };
 
 bindListeners();
-

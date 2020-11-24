@@ -20,7 +20,7 @@ function checkInputValidity(formElement, input, {...rest}) {
 
 function toggleButtonState(formElement, buttonElement, {inactiveButtonClass, ...rest}) {
   if (formElement.checkValidity({...rest})) {
-    buttonElement.classList.remove( inactiveButtonClass);
+    buttonElement.classList.remove(inactiveButtonClass);
     buttonElement.disabled = false;
   } else {
     buttonElement.classList.add(inactiveButtonClass);
@@ -61,4 +61,4 @@ enableValidation({
   submitButtonSelector: '.popup__save-btn',
   inactiveButtonClass: 'popup__save-btn_invalid',
   inputErrorClass: 'popup__text_invalid',
-  });
+})
