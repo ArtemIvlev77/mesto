@@ -97,7 +97,6 @@ function addElement(data) {
   const element = new Card(data.name, data.link, '.element__template', handleElementPreview)
   const newElement = element.render()
   elementContainer.append(newElement);
-  console.log(handleElementPreview);
 }
 
 initialCards.forEach(addElement);
@@ -164,11 +163,14 @@ const submitNewElementPopupByEnterKey = (evt) => {
 
 const handleSubmitNewElement = (evt) => {
   evt.preventDefault();
-  const addElement = data => {
-    const element = new Card (data.name, data.link, '.element__template', handleElementPreview);
-    element.render(elementContainer);
-  };
-  elementContainer.prepend(addElement);
+  function addElement(name, link) {
+    const element = new Card(name, link, '.element__template', handleElementPreview)
+    const newElement = element.render();
+    elementContainer.prepend(newElement);
+  }
+
+  addElement(popupNewElementTitle.value, popupNewElementImage.value);
+
   popupNewElementTitle.value = '';
   popupNewElementImage.value = '';
 };
