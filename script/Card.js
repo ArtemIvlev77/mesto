@@ -1,22 +1,21 @@
-
-
 export class Card {
-    constructor (name, link, templateSelector, handleElementPreview) {
+    constructor(name, link, templateSelector, handleElementPreview) {
         this._name = name;
         this._link = link;
         this._template = document.querySelector(templateSelector).content.querySelector('.element');
-        this._preview =  handleElementPreview;
+        this._preview = handleElementPreview;
+        this._content = null;
     }
 
     _like = () => {
         this._content.querySelector('.element__like-btn').classList.toggle('element__like_active');
-    } 
+    }
 
     _delete = () => {
         this._content.remove();
     }
 
-   _previewImage() {
+    _previewImage() {
         this._preview(this._name, this._link)
     }
 
@@ -29,6 +28,5 @@ export class Card {
         this._content.querySelector('.element__like-btn').addEventListener('click', this._like);
         this._content.querySelector('.element__image-btn').addEventListener('click', () => this._previewImage());
         return this._content;
-
     }
 }
