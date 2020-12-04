@@ -1,10 +1,17 @@
+import {openPopup, popupElementPreview} from "./index.js";
+
+
 export class Card {
-    constructor(name, link, templateSelector, handleElementPreview) {
+    constructor(name, link, templateSelector) {
         this._name = name;
         this._link = link;
         this._template = document.querySelector(templateSelector).content.querySelector('.element');
-        this._preview = handleElementPreview;
         this._content = null;
+    }
+
+    _getTemplate() {
+        this._content = this._template.cloneNode(true);
+        return this._content;
     }
 
     _like = () => {
@@ -15,18 +22,25 @@ export class Card {
         this._content.remove();
     }
 
-    _previewImage() {
-        this._preview(this._name, this._link)
+    _setEventListeners() {
+        this._content.querySelector('.element__remove-btn').addEventListener('click', this._delete);
+        this._content.querySelector('.element__like-btn').addEventListener('click', this._like);
+        this._content.querySelector('.element__image-btn').addEventListener('click', () => {this._handleOpenPopup()});
+    }
+
+    _handleOpenPopup() {
+    popupElementPreview.querySelector('.popup__image-preview').src = this._link;
+    document.querySelector('.popup__title_image-preview').textContent =  this._name;
+    openPopup(popupElementPreview);
     }
 
     render() {
-        this._content = this._template.cloneNode(true);
+        this._getTemplate();
+        this._setEventListeners();
         this._content.querySelector('.element__title').textContent = this._name;
-        this._content.querySelector('.element__image').src = this._link;
-        this._content.querySelector('.element__image').alt = this._name;
-        this._content.querySelector('.element__remove-btn').addEventListener('click', this._delete);
-        this._content.querySelector('.element__like-btn').addEventListener('click', this._like);
-        this._content.querySelector('.element__image-btn').addEventListener('click', () => this._previewImage());
+        const elementImage = this._content.querySelector('.element__image');
+        elementImage.src = this._link;
+        elementImage.alt = this._name;
         return this._content;
     }
 }

@@ -9,6 +9,11 @@ export class FormValidator {
     this._inputErrorClass = settings.inputErrorClass;
   }
 
+  _disableNewCardSubmitButtonStatus = (buttonElement) => {
+    buttonElement.classList.add(this._inactiveButtonClass);
+    buttonElement.disabled = true;
+  }
+
   _showError(formSelector, inputSelector) {
     const errorElement = this._formSelector.querySelector(`#${inputSelector.id}-error`);
     errorElement.textContent = inputSelector.validationMessage;
@@ -33,10 +38,8 @@ export class FormValidator {
     if (this._formSelector.checkValidity()) {
       buttonElement.classList.remove(this._inactiveButtonClass);
       buttonElement.disabled = false;
-      console.log(buttonElement, this._inactiveButtonClass)
     } else {
-      buttonElement.classList.add(this._inactiveButtonClass);
-      buttonElement.disabled = true;
+      this._disableNewCardSubmitButtonStatus(buttonElement);
     }
 
   }
@@ -59,6 +62,7 @@ export class FormValidator {
   enableValidation() {
     this._formSelector.addEventListener('submit', (evt) => {
       evt.preventDefault();
+      this._disableNewCardSubmitButtonStatus(this._formSelector.querySelector(this._submitButtonSelector));
     });
     this._setEventListeners();
   }
