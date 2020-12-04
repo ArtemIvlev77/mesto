@@ -14,7 +14,7 @@ const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
 
 const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup__profile-editor_close-btn');
 const closeButtonPopupNewElement = popupNewElement.querySelector('.popup__new-element_close-btn');
-const closeButtonPopupElementPreview = popupElementPreview.querySelector('.popup__element-preview_close-btn');
+const closeButtonPopupElementPreview = popupElementPreview.querySelector('.popup__elementPreview_closeBtn');
 
 const formPopupProfileEdit = popupProfileEditor.querySelector('.popup__profile-editor_form');
 const nameInput = document.querySelector('.popup__name-input');
@@ -56,7 +56,7 @@ const initialCards = [{
 
 
 function addElement(data) {
-  const element = new Card(data.name, data.link, '.element__template')
+  const element = new Card(data.name, data.link, '.template')
   const newElement = element.render()
   elementContainer.append(newElement);
 }
@@ -108,7 +108,7 @@ const handleSubmitNewElement = (evt) => {
   evt.preventDefault();
 
   function addElement(name, link) {
-    const element = new Card(name, link, '.element__template')
+    const element = new Card(name, link, '.template')
     const newElement = element.render();
     elementContainer.prepend(newElement);
   }
