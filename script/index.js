@@ -63,14 +63,13 @@ function addElement(data) {
 
 initialCards.forEach(addElement);
 
+
+
 export const openPopup = (popup) => {
   popup.classList.add('popup_is-opened');
-  document.addEventListener('keydown', (evt) =>  {
-    if (evt.key === "Escape") {
-      closePopup(popup);
-    }
-  });
-};
+    closePopupByEsc(popup);
+  }
+
 
 
 const popupNewElementReset = () => {
@@ -95,13 +94,20 @@ const closePopup = (popup) => {
     document.removeEventListener('click', closePopupByClickOnOverlay);
 }
 
+const closePopupByEsc = (popup) => {
+  document.addEventListener('keydown', (evt) => {
+    if (evt.key === "Escape") {
+      closePopup(popup);
+    }
+  });
+};
 
 const handleSubmitProfile = (evt) => {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   closePopup(popupProfileEditor);
-};
+}
 
 
 const handleSubmitNewElement = (evt) => {

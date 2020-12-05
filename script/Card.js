@@ -25,7 +25,7 @@ export class Card {
     _setEventListeners() {
         this._content.querySelector('.element__remove-btn').addEventListener('click', this._delete);
         this._content.querySelector('.element__like-btn').addEventListener('click', this._like);
-        this._content.querySelector('.element__image-btn').addEventListener('click', () => {this._handleOpenPopup()});
+        this._content.querySelector('.element__image-btn').addEventListener('click', () => this._handleOpenPopup());
     }
 
     _handleOpenPopup() {
