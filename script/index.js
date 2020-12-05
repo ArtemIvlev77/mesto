@@ -5,25 +5,25 @@ import {
   FormValidator
 } from './FormValidator.js';
 
-const popupProfileEditor = document.querySelector('.popup__profileEditor');
-const popupNewElement = document.querySelector('.popup__newElement');
+const popupProfileEditor = document.querySelector('.profileEditor');
+const popupNewElement = document.querySelector('.newElement');
 export const popupElementPreview = document.querySelector('.popup__elementPreview');
 
 const buttonOpenPopupProfileEditor = document.querySelector('.profile__edit-btn');
 const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
 
-const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.popup__profileEditor_closeBtn');
-const closeButtonPopupNewElement = popupNewElement.querySelector('.popup__newElement_closeBtn');
+const closeButtonPopupProfileEditor = popupProfileEditor.querySelector('.profileEditor_closeBtn');
+const closeButtonPopupNewElement = popupNewElement.querySelector('.newElement_closeBtn');
 const closeButtonPopupElementPreview = popupElementPreview.querySelector('.popup__elementPreview_closeBtn');
 
-const formPopupProfileEdit = popupProfileEditor.querySelector('.popup__profileEditor_form');
+const formPopupProfileEdit = popupProfileEditor.querySelector('.profileEditor_form');
 const nameInput = document.querySelector('.popup__name-input');
 const jobInput = document.querySelector('.popup__job-input');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__job');
 
 
-const popupNewElementForm = popupNewElement.querySelector('.popup__newElement_form');
+const popupNewElementForm = popupNewElement.querySelector('.newElement_form');
 const popupNewElementTitle = popupNewElementForm.querySelector('.popup__element-title');
 const popupNewElementImage = popupNewElementForm.querySelector('.popup__element-link');
 
