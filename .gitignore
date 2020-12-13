@@ -78,7 +78,6 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
-.idea/workspace.xml
-.idea/workspace.xml
-.idea/prettier.xml
-.idea/workspace.xml
+/node_modules
+/dist
+

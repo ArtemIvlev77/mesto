@@ -9,7 +9,7 @@ export class FormValidator {
     this._inputErrorClass = settings.inputErrorClass;
   }
 
-  _disableNewCardSubmitButtonStatus = (buttonElement) => {
+  _disableNewCardSubmitButtonStatus(buttonElement) {
     buttonElement.classList.add(this._inactiveButtonClass);
     buttonElement.disabled = true;
   }

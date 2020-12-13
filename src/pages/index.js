@@ -1,11 +1,13 @@
-import Card from './Card.js';
+import './index.css';
+
+import Card from '../script/Card.js';
 import {
   FormValidator
-} from './FormValidator.js';
-import Section from "./Section.js";
-import PopupWithImage from "./PopupWithImage.js";
-import PopupWithForm from "./PopupWithForm.js";
-import UserInfo from "./UserInfo.js";
+} from '../script/FormValidator.js';
+import Section from "../script/Section.js";
+import PopupWithImage from "../script/PopupWithImage.js";
+import PopupWithForm from "../script/PopupWithForm.js";
+import UserInfo from "../script/UserInfo.js";
 import {
   profileInputSelector,
   buttonOpenPopupProfileEditor,
@@ -18,7 +20,7 @@ import {
   elementContainer,
   initialCards,
     settings
-} from './Constants.js'
+} from '../script/Constants.js'
 
 
 
