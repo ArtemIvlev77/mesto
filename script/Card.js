@@ -1,17 +1,14 @@
-import {openPopup, popupElementPreview} from "./index.js";
-
-
-export class Card {
-    constructor(name, link, templateSelector) {
-        this._name = name;
-        this._link = link;
-        this._template = document.querySelector(templateSelector).content.querySelector('.element');
+class Card {
+    constructor(data, templateSelector, {handleCardClick}) {
+        this._name = data.name;
+        this._link = data.link;
+        this._handleCardClick = handleCardClick;
+        this._template = templateSelector;
         this._content = null;
     }
 
     _getTemplate() {
-        this._content = this._template.cloneNode(true);
-        return this._content;
+        return this._template.content.querySelector('.element').cloneNode(true);
     }
 
     _like = () => {
@@ -25,22 +22,20 @@ export class Card {
     _setEventListeners() {
         this._content.querySelector('.element__remove-btn').addEventListener('click', this._delete);
         this._content.querySelector('.element__like-btn').addEventListener('click', this._like);
-        this._content.querySelector('.element__image-btn').addEventListener('click', () => this._handleOpenPopup());
+        this._content.querySelector('.element__image-btn')
+            .addEventListener('click', () => this._handleCardClick(this._name, this._link));
     }
 
-    _handleOpenPopup() {
-    popupElementPreview.querySelector('.popup__image-preview').src = this._link;
-    document.querySelector('.popup__title_image-preview').textContent =  this._name;
-    openPopup(popupElementPreview);
-    }
 
     render() {
-        this._getTemplate();
-        this._setEventListeners();
+        this._content = this._getTemplate();
         this._content.querySelector('.element__title').textContent = this._name;
-        const elementImage = this._content.querySelector('.element__image');
-        elementImage.src = this._link;
-        elementImage.alt = this._name;
-        return this._content;
+        this._elementImage = this._content.querySelector('.element__image');
+        this._elementImage.src = this._link;
+        this._elementImage.alt = this._name;
+        this._setEventListeners();
+        return this._content
     }
 }
+
+export default Card;
