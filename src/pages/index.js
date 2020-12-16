@@ -19,8 +19,10 @@ import {
   popupNewElementForm,
   elementContainer,
   initialCards,
-    settings
-} from '../script/Constants.js'
+  settings,
+  popupNewElementFormInputTitle,
+  popupNewElementFormInputUrl
+} from '../script/utils/constants.js'
 
 
 
@@ -59,9 +61,7 @@ const addNewElementPopup = new PopupWithForm({
 addNewElementPopup.setEventListeners();
 
 
-buttonOpenPopupNewElement.addEventListener('click', () => {
-  addNewElementPopup.open();
-})
+
 
 const userInfo = new UserInfo(profileInputSelector);
 
@@ -80,15 +80,26 @@ buttonOpenPopupProfileEditor.addEventListener('click', () => {
   const profileData = userInfo.getUserInfo();
   nameInput.value = profileData.name;
   jobInput.value = profileData.job;
+  profileEditorValidator.toggleButtonState();
+  profileEditorValidator.hideError(nameInput);
+  profileEditorValidator.hideError(jobInput);
 })
 
 
 const newElementValidator = new FormValidator(popupNewElementForm, {
   settings
 });
+
 const profileEditorValidator = new FormValidator(formPopupProfileEdit, {
   settings
 });
 
 newElementValidator.enableValidation();
 profileEditorValidator.enableValidation();
+
+buttonOpenPopupNewElement.addEventListener('click', () => {
+  addNewElementPopup.open();
+  newElementValidator.disableNewCardSubmitButtonStatus();
+  newElementValidator.hideError(popupNewElementFormInputTitle);
+  newElementValidator.hideError(popupNewElementFormInputUrl);
+  });

@@ -15,9 +15,12 @@ export const settings = ({
 export const CARD_TEMPLATE = document.querySelector(".template");
 export const popupNewElement = document.querySelector('.newElement');
 export const popupNewElementForm = popupNewElement.querySelector('.newElement-form');
+export const popupNewElementFormInputTitle = popupNewElement.querySelector('.popup__element-title');
+export const popupNewElementFormInputUrl = popupNewElement.querySelector('.popup__element-link')
 
 export const buttonOpenPopupProfileEditor = document.querySelector('.profile__edit-btn');
 export const buttonOpenPopupNewElement = document.querySelector('.profile__add-btn');
+
 
 export const popupProfileEditor = document.querySelector('.profileEditor');
 export const formPopupProfileEdit = popupProfileEditor.querySelector('.profileEditor-form');
