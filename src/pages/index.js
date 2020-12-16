@@ -1,13 +1,13 @@
 import './index.css';
 
-import Card from '../script/Card.js';
+import Card from '../script/components/Card.js';
 import {
   FormValidator
-} from '../script/FormValidator.js';
-import Section from "../script/Section.js";
-import PopupWithImage from "../script/PopupWithImage.js";
-import PopupWithForm from "../script/PopupWithForm.js";
-import UserInfo from "../script/UserInfo.js";
+} from '../script/components/FormValidator.js';
+import Section from "../script/components/Section.js";
+import PopupWithImage from "../script/components/PopupWithImage.js";
+import PopupWithForm from "../script/components/PopupWithForm.js";
+import UserInfo from "../script/components/UserInfo.js";
 import {
   profileInputSelector,
   buttonOpenPopupProfileEditor,
@@ -102,4 +102,5 @@ buttonOpenPopupNewElement.addEventListener('click', () => {
   newElementValidator.disableNewCardSubmitButtonStatus();
   newElementValidator.hideError(popupNewElementFormInputTitle);
   newElementValidator.hideError(popupNewElementFormInputUrl);
+  popupNewElementForm.reset();
   });
