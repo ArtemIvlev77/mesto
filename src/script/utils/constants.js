@@ -3,6 +3,10 @@ export const profileInputSelector = {
   jobSelector: '.profile__job'
 };
 
+export const profileName = document.querySelector(profileInputSelector.nameSelector);
+export const profileJob = document.querySelector(profileInputSelector.jobSelector);
+export const avatarAuthor = document.querySelector('.profile__avatar');
+
 export const settings = ({
   formSelector: '.popup__form',
   inputSelector: '.popup__text',
@@ -29,28 +33,4 @@ export const jobInput = document.querySelector('.popup__job-input');
 
 
 export const elementContainer = document.querySelector('.elements');
-export const initialCards = [{
-  name: 'Архыз',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  alt: 'Архыз'
-}, {
-  name: 'Челябинская область',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  alt: 'Челябинская область'
-}, {
-  name: 'Иваново',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  alt: 'Иваново'
-}, {
-  name: 'Камчатка',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  alt: 'Камчатка'
-}, {
-  name: 'Холмогорский район',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  alt: 'Холмогорский район'
-}, {
-  name: 'Байкал',
-  link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  alt: 'Байкал'
-}];
+
