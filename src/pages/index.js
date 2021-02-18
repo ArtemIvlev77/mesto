@@ -42,28 +42,6 @@ const makeNewCard = (item) => {
 };
 
 
-const renderCardList = (cards) => {
-  const cardList = new Section({
-    items: cards,
-    renderer: (item) => {
-      const card = makeNewCard(item);
-      const cardElement = card.render();
-      cardList.addItem(cardElement);
-    }
-  }, elementContainer);
-  cardList.renderItems();
-};
-
-const addNewElementPopup = new PopupWithForm({
-  popupSelector: ".newElement",
-  handleFormSubmit: (item) => {
-    const newCard = makeNewCard(item);
-    const cardElement = newCard.render();
-    cardList.addItem(cardElement)
-  },
-});
-
-addNewElementPopup.setEventListeners();
 
 
 
@@ -127,6 +105,8 @@ const api = new Api({
   },
 });
 
+
+
 let userId = null;
 
 api.getUserInfo().then((data) => {
@@ -146,3 +126,43 @@ api.getInitialCards()
   }).catch((err) => {
     console.log(err);
   });
+
+
+const renderCardList = (cards) => {
+  const cardList = new Section({
+    items: cards,
+    renderer: (item) => {
+      const card = makeNewCard(item);
+      const cardElement = card.render();
+      cardList.addItem(cardElement);
+    }
+  }, elementContainer);
+  cardList.renderItems();
+};
+
+const initCard = (item) => {
+  const card = new Card(item, userId, )
+}
+
+
+const addNewElementPopup = new PopupWithForm({
+  popupSelector: ".newElement",
+  handleFormSubmit: (item) => {
+    api.addCard({
+      name: item.name,
+      link: item.link
+    })
+      .then((data) => 
+        render({
+        name: data.name,
+        link: data.link
+      }),
+        
+    // const newCard = makeNewCard(item);
+    // const cardElement = newCard.render();
+    // cardList.addItem(cardElement)
+)}
+});
+
+addNewElementPopup.setEventListeners();
+

@@ -1,12 +1,18 @@
-class Card {
-    constructor(data, templateSelector, {handleCardClick}) {
+ class Card {
+    constructor(data, templateSelector, userId, {handleCardClick, handleLikeClick, handleDeleteClick}) {
         this._name = data.name;
         this._link = data.link;
+        this._cardId = data.id;
+        this._cardLikes = data.likes;
+        this._ownerId = data.owner._id;
         this._handleCardClick = handleCardClick;
+        this._handleLikeClick = handleLikeClick;
+        this._handleDeleteClick = handleDeleteClick;
         this._template = templateSelector;
         this._content = null;
         this._delete = this._delete.bind(this);
         this._like = this._like.bind(this);
+        this._userId = userId;
     }
 
     _getTemplate() {
