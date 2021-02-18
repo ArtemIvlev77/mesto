@@ -33,19 +33,6 @@ import {
 const imagePreview = new PopupWithImage(".elementPreview");
 imagePreview.setEventListener();
 
-const makeNewCard = (item) => {
-  return new Card(item, CARD_TEMPLATE, {
-    handleCardClick: (name, link) => {
-      imagePreview.open(name, link);
-    },
-  });
-};
-
-
-
-
-
-
 const userInfo = new UserInfo(profileInputSelector);
 
 const editProfilePopup = new PopupWithForm({
@@ -131,7 +118,7 @@ const renderCardList = (cards) => {
   const cardList = new Section({
     items: cards,
     renderer: (item) => {
-      const card = makeNewCard(item);
+      const card = initCard(item);
       const cardElement = card.render();
       cardList.addItem(cardElement);
     }
@@ -140,28 +127,36 @@ const renderCardList = (cards) => {
 };
 
 const initCard = (item) => {
-  const card = new Card(item, userId, )
-}
+  const card = new Card(item, userId, CARD_TEMPLATE, {
+    handleCardClick: (name, link) => {
+      imagePreview.open(name, link);
+    },
+    handleLikeClick: () => {
+      const likedCard = card.initSelfLike();
+      const resApi = likedCard
+          ? api.delLikes(card.getCardId())
+          : api.setLikes(card.getCardId());
+      resApi.then((item) =>  {
+        card.setLikes(item.likes);
+        card.renderLikes();
+          }).catch((err) => {console.log(err);
+          });
+        },
+    handleDeleteClick: () => {
+      popupWithSubmit.open(card);
+    },   
+  });
+  return card;
+};
 
 
 const addNewElementPopup = new PopupWithForm({
   popupSelector: ".newElement",
   handleFormSubmit: (item) => {
-    api.addCard({
-      name: item.name,
-      link: item.link
-    })
-      .then((data) => 
-        render({
-        name: data.name,
-        link: data.link
-      }),
-        
-    // const newCard = makeNewCard(item);
-    // const cardElement = newCard.render();
-    // cardList.addItem(cardElement)
-)}
-});
+    const newCard = initCard(item);
+    const cardElement = newCard.render();
+    cardList.addItem(cardElement)
+}});
 
 addNewElementPopup.setEventListeners();
 

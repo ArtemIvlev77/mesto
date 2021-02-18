@@ -15,7 +15,6 @@ module.exports = {
     open: true,
     port: 7777
   },
-  // mode: 'production'
   module: {
     rules: [
       {
@@ -43,5 +42,5 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     template: './src/index.html'
-  }), new MiniCssExtractPlugin()]
+  }), new MiniCssExtractPlugin()],
 };
