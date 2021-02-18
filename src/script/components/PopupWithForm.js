@@ -23,5 +23,11 @@ export default class PopupWithForm extends Popup {
       this._handleFormSubmit(this._getInputValues());
       this.close();
     });
-    }
+  }
+
+
+    savingButton(text) {
+      this._saveBtn.value = text;
+  };
+
 }
