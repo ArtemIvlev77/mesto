@@ -114,7 +114,6 @@ api.getUserInfo().then((data) => {
     profileJob.textContent = data.about;
     avatarAuthor.src = data.avatar;
     userId = data._id;
-    console.log(userId);
   })
   .catch((err) => {
     console.log(err);
