@@ -206,7 +206,7 @@ const cardDeleteHandler = (card) => {
 }
 
 const popupDeleteCardSubmit = new PopupSubmit(
-  '.popup__submit', cardDeleteHandler
+  '.popup__type_submit', cardDeleteHandler
 )
 popupDeleteCardSubmit.setEventListeners();
 
@@ -214,7 +214,7 @@ popupDeleteCardSubmit.setEventListeners();
 
 
 const editProfileAvatarPopup = new PopupWithForm(
-  '.popupEditAvatar',
+  '.popup__type_editAvatar',
   editProfileAvatarHandler);
 editProfileAvatarPopup.setEventListeners();
 
