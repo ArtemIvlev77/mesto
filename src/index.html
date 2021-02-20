@@ -4,17 +4,21 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <link rel="stylesheet" href="src/pages/index.css">-->
+    <!-- <link rel="stylesheet" href="/pages/index.css"> -->
     <title>Место</title>
   </head>
+
   <body class="page">
     <div class="page__container">
       <header class="header page__section">
-        <img src="<%=require('./image/logo.svg')%>" alt="логотип: место россия" class="header__logo">
+        <img src='<%=require("./image/logo.svg")%>' alt="логотип: место россия" class="header__logo">
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img src="<%=require('./image/jak-iv-kusto.jpg')%>" alt="Жак Ив Кусто" class="profile__avatar">
+          <div class="profile__avatar-container">
+            <img src='<%=require("./image/editAvatar.svg")%>' class="profile__editAvatar" alt="Смена аватара">
+            <img src='<%=require("./image/jak-iv-kusto.jpg")%>' alt="Жак Ив Кусто" class="profile__avatar">
+          </div>
           <div class="profile__info">
             <div class="profile__container">
               <h1 class="profile__name">Жак Ив Кусто </h1> <button type="button" class="profile__edit-btn"></button>
@@ -36,12 +40,14 @@
           <button type="button" class="popup__closeBtn profileEditor-closeBtn"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <form class="popup__form profileEditor-form" novalidate>
-          <input name="name" id="profile-name" type="text" class="popup__text popup__text_valid popup__name-input" required minlength="2" maxlength="40">
-              <span id="profile-name-error" class="popup__error"></span>
-          <input name="job" id="profile-job" type="text" class="popup__text popup__text_valid popup__job-input" required minlength="2" maxlength="200">
-              <span id="profile-job-error" class="popup__error"></span>
-          <button type="submit" class="popup__save-btn profileEditor-saveBtn">Сохранить</button>
-        </form>
+            <input name="name" id="profile-name" type="text" class="popup__text popup__text_valid popup__name-input"
+              required minlength="2" maxlength="40">
+            <span id="profile-name-error" class="popup__error"></span>
+            <input name="job" id="profile-job" type="text" class="popup__text popup__text_valid popup__job-input"
+              required minlength="2" maxlength="200">
+            <span id="profile-job-error" class="popup__error"></span>
+            <button type="submit" class="popup__save-btn profileEditor-saveBtn">Сохранить</button>
+          </form>
         </div>
       </div>
     </div>
@@ -51,42 +57,62 @@
         <button type="button" class="popup__closeBtn newElement-closeBtn"></button>
         <h2 class="popup__title">Новое место</h2>
         <form class="popup__form newElement-form" novalidate>
-        <input name="name" id="new-element-name" type="text" class="popup__text popup__text_valid popup__element-title" placeholder="Название" required minlength="2" maxlength="30">
-            <span id="new-element-name-error" class="popup__error"></span>
-        <input name="link" id="url-element" type="url" class="popup__text popup__text_valid popup__element-link" placeholder="Ссылка на картинку" required>
-            <span id="url-element-error" class="popup__error"></span>
-        <button type="submit" class="popup__save-btn newElement-saveBtn">Сохранить</button>
+          <input name="name" id="new-element-name" type="text"
+            class="popup__text popup__text_valid popup__element-title" placeholder="Название" required minlength="2"
+            maxlength="30">
+          <span id="new-element-name-error" class="popup__error"></span>
+          <input name="link" id="url-element" type="url" class="popup__text popup__text_valid popup__element-link"
+            placeholder="Ссылка на картинку" required>
+          <span id="url-element-error" class="popup__error"></span>
+          <button type="submit" class="popup__save-btn newElement-saveBtn">Сохранить</button>
         </form>
+      </div>
     </div>
-  </div>
     <div class="popup elementPreview">
       <div class="popup__container popup__image-preview-container">
-      <button type="button" class="popup__closeBtn elementPreview-closeBtn"></button>
-      <img src=" " alt=" " class="popup__image-preview" >
-      <h3 class="popup__text popup__title popup__title_image-preview "></h3>
+        <button type="button" class="popup__closeBtn elementPreview-closeBtn"></button>
+        <img src=" " alt=" " class="popup__image-preview">
+        <h3 class="popup__text popup__title popup__title_image-preview "></h3>
       </div>
     </div>
 
     <div class="popup popup__submit">
+      <div class="popup__container">
       <form name="delete-confirm" class="popup__form" novalidate>
-        <h2 class="popup__title confirm-delete">Вы уверены?</h2>
-        <input name="save-button" type="submit" value="Да" class="popup__save-Btn">
-        <button type="button" class="popup__closeBtn popup-submit_closeBtn"></button>
-    </form>
+        <h2 class="popup__title">Вы уверены?</h2>
+        <input name="save-button" type="submit" value="Да" class="popup__save-btn">
+        <button type="button" class="popup__closeBtn"></button>
+      </form>
+    </div>
+  </div>
+
+    <div class="popup popup__editAvatar popupEditAvatar">
+      <div class="popup__container">
+        <button type="button" class="popup__closeBtn editAvatarPopup-closeBtn"></button>
+        <h2 class="popup__title">Обновить аватар</h2>
+        <form name="editAvatar" class="popup__form" novalidate>
+          <input name="link" id="URL" type="url"  class="popup__text popup__text_valid popupAvatarUrl" placeholder="Ссылка на аватар"
+            required>
+          <span id="URL-error" class="popup__error"></span>
+          <button type="submit" class="popup__save-btn editAvatar-saveBtn">Сохранить</button>
+        </form>
+      </div>
     </div>
 
     <template class="template">
       <li class="element">
         <button type="button" class="element__image-btn"><img src=" " alt=" " class="element__image"></button>
         <button class="element__remove-btn"></button>
-        <div class="element__discription"> 
+        <div class="element__discription">
           <h3 class="element__title"></h3>
-          <button class="element__like-btn"></button>
-          <div class="element__like-count"></div>
+          <div class="element__like-container">
+            <button class="element__like-btn"></button>
+            <div class="element__like-count"></div>
+          </div>
         </div>
       </li>
     </template>
-<!--    <script src="src/script/index.js" type="module"></script>-->
+    <!-- <script src="../pages/index.js" type="module"></script> -->
   </body>
 
   </html>

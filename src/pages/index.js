@@ -13,9 +13,11 @@ import {
   profileName,
   profileJob,
   avatarAuthor,
+  profileEditAvatarBtn,
   buttonOpenPopupProfileEditor,
   buttonOpenPopupNewElement,
   formPopupProfileEdit,
+  formPopupEditAvatar,
   nameInput,
   jobInput,
   CARD_TEMPLATE,
@@ -23,31 +25,53 @@ import {
   elementContainer,
   settings,
   popupNewElementFormInputTitle,
-  popupNewElementFormInputUrl
+  popupNewElementFormInputUrl,
+  popupEditAvatar,
+  popupAvatarLink
 } from '../script/utils/constants.js'
+import PopupSubmit from '../script/components/PopupSubmit.js';
 
 
+let userId = null;
 
-////////////////////////////////////////////////////////////////////////////Project 8
+const api = new Api({
+  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-20",
+  headers: {
+    authorization: "c991fcc7-9f95-4717-b779-f2f9eb8f4dbe",
+    "Content-Type": "application/json",
+  },
+});
 
-const imagePreview = new PopupWithImage(".elementPreview");
-imagePreview.setEventListener();
+api.getUserInfo().then((data) => {
+    profileName.textContent = data.name;
+    profileJob.textContent = data.about;
+    avatarAuthor.src = data.avatar;
+    userId = data._id;
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 const userInfo = new UserInfo(profileInputSelector);
 
-const editProfilePopup = new PopupWithForm({
-  popupSelector: '.profileEditor',
-  handleFormSubmit: ({
-    name,
-    job
-  }) => {
-    userInfo.setUserInfo({
-      name,
-      job
+const editUserInfoHandler = (data) => {
+  api.editUserInfo(data.name, data.job)
+    .then(() => {
+      userInfo.setUserInfo(data.name, data.job);
+      editProfilePopup.close();
+    }).catch((err) => {
+      console.log(err)
     });
-  },
-});
+}
+
+const editProfilePopup = new PopupWithForm(
+  '.profileEditor',
+  editUserInfoHandler
+);
 editProfilePopup.setEventListeners();
+
+const imagePreview = new PopupWithImage(".elementPreview");
+imagePreview.setEventListener();
 
 
 
@@ -70,8 +94,13 @@ const profileEditorValidator = new FormValidator(formPopupProfileEdit, {
   settings
 });
 
+const avatarEditorValidator = new FormValidator(formPopupEditAvatar, {
+  settings
+})
+
 newElementValidator.enableValidation();
 profileEditorValidator.enableValidation();
+avatarEditorValidator.enableValidation();
 
 buttonOpenPopupNewElement.addEventListener('click', () => {
   addNewElementPopup.open();
@@ -84,27 +113,9 @@ buttonOpenPopupNewElement.addEventListener('click', () => {
 
 //////////////////////////////////////////////////////project 9
 
-const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-20",
-  headers: {
-    authorization: "c991fcc7-9f95-4717-b779-f2f9eb8f4dbe",
-    "Content-Type": "application/json",
-  },
-});
 
 
 
-let userId = null;
-
-api.getUserInfo().then((data) => {
-    profileName.textContent = data.name;
-    profileJob.textContent = data.about;
-    avatarAuthor.src = data.avatar;
-    userId = data._id;
-  })
-  .catch((err) => {
-    console.log(err);
-  });
 
 api.getInitialCards()
   .then((cards) => {
@@ -133,30 +144,83 @@ const initCard = (item) => {
     },
     handleLikeClick: () => {
       const likedCard = card.initSelfLike();
-      const resApi = likedCard
-          ? api.delLikes(card.getCardId())
-          : api.setLikes(card.getCardId());
-      resApi.then((item) =>  {
+      const resApi = likedCard ?
+        api.delLikes(card.getCardId()) :
+        api.setLikes(card.getCardId());
+      resApi.then((item) => {
         card.setLikes(item.likes);
         card.renderLikes();
-          }).catch((err) => {console.log(err);
-          });
-        },
+      }).catch((err) => {
+        console.log(err);
+      });
+    },
     handleDeleteClick: () => {
-      popupWithSubmit.open(card);
-    },   
+      popupDeleteCardSubmit.open(card);
+    },
   });
   return card;
 };
 
 
-const addNewElementPopup = new PopupWithForm({
-  popupSelector: ".newElement",
-  handleFormSubmit: (item) => {
-    const newCard = initCard(item);
-    const cardElement = newCard.render();
-    cardList.addItem(cardElement)
-}});
+const addNewCardHandler = (card) => {
+  api.addCard(card.name, card.link).then((item) => {
+      const newCard = initCard(item);
+      const cardElement = newCard.render();
+      elementContainer.prepend(cardElement);
+    })
+    .then(() => {
+      addNewElementPopup.close();
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+};
 
+
+const addNewElementPopup = new PopupWithForm(
+  ".newElement",
+  addNewCardHandler
+);
 addNewElementPopup.setEventListeners();
 
+const editProfileAvatarHandler = () => {
+  api.editUserAvatar(popupAvatarLink.value)
+    .then(() => {
+      avatarAuthor.src = popupAvatarLink.value;
+      editProfileAvatarPopup.close();
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+}
+
+const cardDeleteHandler = (card) => {
+  api.deleteCard(card.getCardId())
+    .then(() => {
+     card.deleteCard();
+      popupDeleteCardSubmit.close();
+    })
+    .catch((err) => { 
+      console.log(err);
+    })
+}
+
+const popupDeleteCardSubmit = new PopupSubmit(
+  '.popup__submit', cardDeleteHandler
+)
+popupDeleteCardSubmit.setEventListeners();
+
+
+
+
+const editProfileAvatarPopup = new PopupWithForm(
+  '.popupEditAvatar',
+  editProfileAvatarHandler);
+editProfileAvatarPopup.setEventListeners();
+
+profileEditAvatarBtn.addEventListener('click', () => {
+  formPopupEditAvatar.reset()
+  avatarEditorValidator.disableNewCardSubmitButtonStatus()
+  avatarEditorValidator.hideError(popupAvatarLink);
+  editProfileAvatarPopup.open();
+})

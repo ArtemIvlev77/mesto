@@ -1,4 +1,10 @@
-.element__like_active {
-  background: url(../../../../image/heart_active.svg) no-repeat;
-  border: none;
+.element__like-btn_active {
+  background: url(../../../../image/heart_active.svg) no-repeat center;
+  outline: none;
+  background-size: contain;
+  border-style: none;
+  object-fit: cover;
+  width: 100%;
+  width: 21px;
+  height: 20px;
 }

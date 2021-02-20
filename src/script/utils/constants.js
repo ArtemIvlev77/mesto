@@ -31,6 +31,12 @@ export const formPopupProfileEdit = popupProfileEditor.querySelector('.profileEd
 export const nameInput = document.querySelector('.popup__name-input');
 export const jobInput = document.querySelector('.popup__job-input');
 
+export const popupEditAvatar = document.querySelector('.popup__editAvatar');
+export const popupAvatarLink = popupEditAvatar.querySelector('.popupAvatarUrl');
+export const profileEditAvatarBtn = document.querySelector('.profile__avatar');
+
+export const formPopupEditAvatar = popupEditAvatar.querySelector('.popup__form');
+
 
 export const elementContainer = document.querySelector('.elements');
 
