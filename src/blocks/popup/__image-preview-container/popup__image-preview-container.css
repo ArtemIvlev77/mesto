@@ -1,6 +1,6 @@
 .popup__image-preview-container {
   padding: 0;
   background: none;
-  max-width: 75vw;
-  max-height: 75vh;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,0 +1,12 @@
+.element__like-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 18px;
+}
+
+@media screen and (max-width: 320px){
+  .element__like-container {
+    margin-right: 22px;
+  }
+}
