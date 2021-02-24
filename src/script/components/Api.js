@@ -22,23 +22,23 @@ export default class Api {
         }).then((res) => this._addResult(res));
     }
 
-    editUserInfo(name, job) {
+    editUserInfo(data) {
         return fetch(`${this._url}/users/me/`, {
             method: "PATCH",
             headers: this._headers,
             body: JSON.stringify({
-                name: name,
-                about: job,
+                name: data.name,
+                about: data.job,
             }),
         }).then((res) => this._addResult(res));
     }
 
-    editUserAvatar(URL) {
+    editUserAvatar(data) {
         return fetch(`${this._url}/users/me/avatar`, {
             method: "PATCH",
             headers: this._headers,
             body: JSON.stringify({
-                avatar: URL,
+                avatar: data.avatar,
             }),
         }).then((res) => this._addResult(res));
     }

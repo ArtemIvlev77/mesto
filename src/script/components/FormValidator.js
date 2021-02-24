@@ -30,7 +30,7 @@ export class FormValidator {
     }
   }
 
-  disableNewCardSubmitButtonStatus() {
+  disableSubmitBtn() {
     this._buttonElement.classList.add(this._inactiveButtonClass);
     this._buttonElement.disabled = true;
   }
@@ -40,7 +40,7 @@ export class FormValidator {
       this._buttonElement.classList.remove(this._inactiveButtonClass);
       this._buttonElement.disabled = false;
     } else {
-      this.disableNewCardSubmitButtonStatus(this._buttonElement);
+      this.disableSubmitBtn(this._buttonElement);
     }
   }
 

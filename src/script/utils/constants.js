@@ -1,11 +1,12 @@
 export const profileInputSelector = {
   nameSelector: '.profile__name',
-  jobSelector: '.profile__job'
+  jobSelector: '.profile__job',
+  avatarSelector: '.profile__avatar'
 };
 
 export const profileName = document.querySelector(profileInputSelector.nameSelector);
 export const profileJob = document.querySelector(profileInputSelector.jobSelector);
-export const avatarAuthor = document.querySelector('.profile__avatar');
+export const avatar = document.querySelector(profileInputSelector.avatarSelector);
 
 export const settings = ({
   formSelector: '.popup__form',
