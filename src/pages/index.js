@@ -43,9 +43,7 @@ const api = new Api({
 });
 
 api.getUserInfo().then((data) => {
-    profileName.textContent = data.name;
-    profileJob.textContent = data.about;
-    avatar.src = data.avatar;
+    userInfo.setUserInfo(data);
     userId = data._id;
   })
   .catch((err) => {

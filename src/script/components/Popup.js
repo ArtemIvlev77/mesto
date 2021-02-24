@@ -14,9 +14,6 @@ export default class Popup {
   }
 
   close() {
-    if (this._popupForm !== null) {
-      this._popupForm.reset()
-    };
     this._popupSelector.classList.remove('popup_is-opened');
     document.removeEventListener('click', this._handleClickOverlay);
     document.removeEventListener('keydown', this._handleCloseEsc);
